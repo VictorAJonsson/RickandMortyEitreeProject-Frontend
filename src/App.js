@@ -9,7 +9,7 @@ function App() {
   const [totalPages, setTotalPages] = useState(1);
   const [showCharList, setShowCharList] = useState(false);
   const [showCharLoading, setShowCharLoading] = useState(false);
-  
+
   const fetchCharacters = async (page = 1, searchTerm) => {
     try {
       setShowCharLoading(true);
@@ -45,14 +45,14 @@ function App() {
         />
         <button onClick={() => fetchCharacters(1, searchTerm)}>Search</button>
       </div>
-      {showCharLoading && 
+      {showCharLoading &&
         <div className="loading">
           <div className='loadingimg'
-            style={{ backgroundImage: "url('./images/Loading-img.jpeg')"}}>
+            style={{ backgroundImage: "url('./images/Loading-img.jpeg')" }}>
           </div>
           <h2>Loading</h2>
         </div>}
-      {showCharList && <CharList characters={characters}  totalPages={totalPages} onPageChange={handlePageChange} />}
+      {showCharList && <CharList characters={characters} totalPages={totalPages} onPageChange={handlePageChange} />}
     </div>
   );
 }
