@@ -1,0 +1,266 @@
+/* src/components/CharList.css */
+.Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.characterlist {
+  display: grid;
+  height: 100%;
+  width: 50%;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  color: #fff;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gridarea {
+  width: 224px;
+  height: 224px;
+}
+
+.backgroundimg {
+  width: 224px;
+  height: 168px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-size: 100% 125%;
+  background-position-y: -20px;
+  background-position-x: -1px;
+  background-repeat: no-repeat;
+}
+
+.charactercards {
+  width: 224px;
+  height: 224px;
+  border-radius: 8px;
+  border: 2px solid #606060;
+  z-index: 1;
+}
+
+.charactercards:hover {
+  border: 2px solid #CBD736;
+  box-shadow: 0px 0px 10px 1px #CBD736;
+}
+
+.mattestripe {
+  width: 100%;
+  height: 57px;
+  position: relative;
+  z-index: -1;
+  margin-top: 163px;
+  border: 1px solid #0000;
+  background-color: #272727;
+}
+
+.mattestripe img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 25%;
+  filter: blur(10px);
+  object-fit: cover;
+  z-index: -2;
+}
+
+.charactercards h1,
+.charactercards h3 {
+  position: absolute;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.charactercards h1 {
+  width: 210px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 170px 20px auto 10px;
+}
+
+.charactercards h3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 10px;
+  margin-top: 200px;
+}
+
+.pagination {
+  display: flex;
+  gap: 48px;
+}
+
+.pagination button,
+.pagination span {
+  align-items: center;
+  height: 40px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination span.pagesnumebers button {
+  width: 30px;
+  text-align: center;
+}
+
+.pagination span.pagesnumebers button.active {
+  color: yellow;
+}
+
+.cardChar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 1034px;
+  height: 650px;
+  z-index: 2;
+  top: 50px;
+  left: 255px;
+  border-radius: 16px;
+  border: 1px solid #161616;
+  background-color: #000000;
+  box-shadow: 10px 10px 50px 25px #1f1f1f;
+}
+
+.cardImg {
+  position: fixed;
+  width: 300px;
+  height: 444px;
+  top: 133px;
+  left: 200px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -70px;
+  z-index: 4;
+}
+
+.stripe {
+  width: 300px;
+  height: 500px;
+  border: 2px solid #606060;
+  border-radius: 8px;
+  box-shadow: 0 0 15px 2px #1d1d1d;
+  z-index: 5;
+}
+
+.stripe h4,
+.stripe h3 {
+  position: absolute;
+  color: #fff;
+  letter-spacing: 0em;
+  text-align: left;
+  z-index: 5;
+
+}
+
+.stripe h4 {
+  width: 100%;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 444px 20px auto 10px;
+}
+
+.stripe h3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 10px;
+  margin-top: 472px;
+}
+
+.cardstripe {
+  margin-top: 443px;
+  width: 100%;
+  height: 54px;
+  position: relative;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  box-shadow: 0 0 1px 1px #606060;
+  background-color: rgba(0, 0, 0, 0.50);
+  backdrop-filter: blur(25px);
+  z-index: 3;
+}
+
+.cardChar h5,
+.cardChar h6,
+.cardChar h7 {
+  margin-left: 500px;
+  text-align: left;
+  z-index: 4;
+}
+
+.cardChar h5 {
+  margin-top: 100px;
+  color: #CBD736;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.65em;
+  line-height: 18px;
+}
+
+.cardChar h6 {
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 22px;
+}
+
+.cardChar h7 {
+  margin-top: 50px;
+  color: white;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 38px;
+}
+
+
+.cardChar button {
+  position: fixed;
+  width: 84px;
+  height: 42px;
+  top: 65px;
+  left: 265px;
+  border-radius: 8px;
+  z-index: 4;
+}
+
+.backcardstripe {
+  width: 380px;
+  height: 649px;
+  position: fixed;
+  z-index: 3;
+  border: 1px solid #161616;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #272727;
+  overflow: hidden;
+}
+
+.backcardstripe img {
+  position: relative;
+  width: 441px;
+  height: 1214px;
+  top: -10px;
+  left: -28px;
+  opacity: 30%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
