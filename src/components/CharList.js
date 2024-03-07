@@ -52,7 +52,29 @@ const CharList = ({ characters, totalPages, onPageChange }) => {
       console.error('Error in request to /api/characters/' + character_id, error);
     }
   };
-  
+
+  const getPronoun = (gender) => {
+    switch (gender) {
+      case 'Male':
+        return 'He';
+      case 'Female':
+        return 'She';
+      default:
+        return 'They';
+    }
+  };
+
+  const getStatusMessage = (status, pronoun) => {
+    switch (status.toLowerCase()) {
+      case 'alive':
+        return `${charcard.name} is a ${charcard.gender.toLowerCase()} ${charcard.species.toLowerCase()}. ${pronoun} is ${charcard.status.toLowerCase()} and well.`;
+      case 'dead':
+        return `${charcard.name} was a ${charcard.gender.toLowerCase()} ${charcard.species.toLowerCase()}. ${pronoun} is ${charcard.status.toLowerCase()}.`;
+      default:
+        return `${charcard.name} is a ${charcard.gender.toLowerCase()} ${charcard.species.toLowerCase()}. It can’t be told if ${pronoun.toLowerCase()} is alive or dead.`;
+    }
+  };
+
   return (
     <div className='Container'>
 
@@ -70,7 +92,7 @@ const CharList = ({ characters, totalPages, onPageChange }) => {
           </div>
           <button onClick={() => setShowCardChar(false)}>Close</button>
           <h5>ABOUT</h5>
-          <h6>{charcard.name} is a {charcard.gender} {charcard.species}. He is {charcard.status}.</h6>
+          <h6>{getStatusMessage(charcard.status, getPronoun(charcard.gender))}</h6>
           <h5>ORIGIN</h5>
           <h7>{charcard.origin_name}</h7>
           <h5>LOCATION</h5>
@@ -106,7 +128,7 @@ const CharList = ({ characters, totalPages, onPageChange }) => {
       <div className="pagination">
         <button onClick={prevPage} disabled={currentPage === 1}>
           <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 1L1 10.5L10 20" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="bevel" />
+            <path d="M10 1L1 10.5L10 20" strokeWidth="2" strokeLinecap="round" strokeLinejoin="bevel" />
           </svg>
         </button>
         <span className='pagesnumebers'>
@@ -121,7 +143,7 @@ const CharList = ({ characters, totalPages, onPageChange }) => {
         </span>
         <button className='next' onClick={nextPage} disabled={currentPage === totalPages}>
           <svg width="11" height="21" viewBox="0 0 11 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.999999 20L10 10.5L1 0.999998" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="bevel" />
+            <path d="M0.999999 20L10 10.5L1 0.999998" strokeWidth="2" strokeLinecap="round" strokeLinejoin="bevel" />
           </svg>
         </button>
       </div>
