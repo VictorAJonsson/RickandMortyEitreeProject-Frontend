@@ -1,13 +1,15 @@
 // src/App.js
 import React, { useState } from 'react';
 import './App.css';
-import CharList from './components/CharList';
+import Head from './components/Head/Head';
+import Loading from './components/Loading/Loading';
+import Body from './components/Body/Body';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [characters, setCharacters] = useState([]);
   const [totalPages, setTotalPages] = useState(1);
-  const [showCharList, setShowCharList] = useState(false);
+  const [showBody, setShowBody] = useState(false);
   const [showCharLoading, setShowCharLoading] = useState(false);
 
   const fetchCharacters = async (page = 1, searchTerm) => {
@@ -18,7 +20,7 @@ function App() {
       if (data.success) {
         setCharacters(data.data.character_list);
         setTotalPages(data.data.total_pages);
-        setShowCharList(true);
+        setShowBody(true);
       } else {
         console.error(data.message);
       }
@@ -35,24 +37,13 @@ function App() {
 
   return (
     <div className="App">
-      <img className='titleimg' src="./images/Title-img.png" alt="Rick and Morty" />
-      <div className="search-container">
-        <input
-          type="text"
-          placeholder="Search characters"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button onClick={() => fetchCharacters(1, searchTerm)}>Search</button>
-      </div>
-      {showCharLoading &&
-        <div className="loading">
-          <div className='loadingimg'
-            style={{ backgroundImage: "url('./images/Loading-img.jpeg')" }}>
-          </div>
-          <h2>Loading</h2>
-        </div>}
-      {showCharList && <CharList characters={characters} totalPages={totalPages} onPageChange={handlePageChange} />}
+
+      <Head searchTerm={searchTerm} setSearchTerm={setSearchTerm} fetchCharacters={fetchCharacters} />
+
+      {showCharLoading && <Loading />}
+
+      {showBody && <Body characters={characters} totalPages={totalPages} onPageChange={handlePageChange} />}
+
     </div>
   );
 }

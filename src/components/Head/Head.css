@@ -1,0 +1,33 @@
+.Elements img {
+  width: 50%;
+  max-width: 640px;
+  height: auto;
+  position: flex;
+}
+
+.Elements {
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.Elements input,
+.Elements button {
+  font-size: 16px;
+  background-color: #ffffff00;
+  color: #fff;
+  border-radius: 8px;
+  border: 2px solid #ffffff;
+}
+
+.Elements input {
+  margin-right: 16px;
+  padding: 10px;
+  width: 300px;
+}
+
+.Elements button {
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 8px;
+}

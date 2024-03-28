@@ -1,0 +1,85 @@
+.characterlist {
+  display: grid;
+  height: 100%;
+  width: 50%;
+  grid-template-columns: repeat(4, 1fr);
+  color: #fff;
+  justify-content: center;
+  gap: 24px;
+}
+
+.gridarea {
+  width: 224px;
+  height: 224px;
+}
+
+.backgroundimg {
+  width: 224px;
+  height: 168px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-size: 100% 125%;
+  background-position-y: -20px;
+  background-position-x: -1px;
+  background-repeat: no-repeat;
+}
+
+.charactercards {
+  width: 224px;
+  height: 224px;
+  border-radius: 8px;
+  border: 2px solid #606060;
+  z-index: 1;
+}
+
+.charactercards:hover {
+  border: 2px solid #CBD736;
+  box-shadow: 0px 0px 10px 1px #CBD736;
+}
+
+.mattestripe {
+  width: 100%;
+  height: 57px;
+  position: relative;
+  z-index: -1;
+  margin-top: 163px;
+  border: 1px solid #0000;
+  background-color: #272727;
+}
+
+.mattestripe img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 25%;
+  filter: blur(10px);
+  object-fit: cover;
+  z-index: -2;
+}
+
+.charactercards h1,
+.charactercards h3 {
+  position: absolute;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.charactercards h1 {
+  width: 210px;
+  height: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 35px;
+  margin: 170px 20px auto 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.charactercards h3 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  margin-left: 10px;
+  margin-top: 200px;
+}
