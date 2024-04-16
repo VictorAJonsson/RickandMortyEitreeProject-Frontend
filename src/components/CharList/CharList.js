@@ -1,19 +1,19 @@
 // components/CharList/CharList.js
 import React, { useState } from 'react';
 import './CharList.css';
-import CharCard from '../CharCard/CharCard';
+import CardModal from '../CardModal/CardModal';
 
 const CharList = ({ characters }) => {
   const [showCardChar, setShowCardChar] = useState(false);
   const [character_id, setCharacterId] = useState(1);
-  
+
   const handleCloseCard = () => {
     setShowCardChar(false);
   };
 
   return (
     <>
-      {showCardChar && <CharCard showCardChar={showCardChar} character_id={character_id} handleCloseCard={handleCloseCard} />}
+      {showCardChar && <CardModal showCardChar={showCardChar} character_id={character_id} handleCloseCard={handleCloseCard} />}
 
       <div className="characterlist">
         {characters.map((character) => (
