@@ -8,7 +8,7 @@ const CardModal = ({ character_id, handleCloseCard }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/characters/${character_id}`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/characters/${character_id}`);
         const data = await response.json();
         if (data.success) {
           setCardModal(data.data);

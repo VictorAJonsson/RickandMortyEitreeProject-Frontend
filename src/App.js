@@ -15,7 +15,7 @@ function App() {
   const fetchCharacters = async (page = 1, searchTerm) => {
     try {
       setShowCharLoading(true);
-      const response = await fetch(`http://localhost:5000/api/characters?partial_name=${searchTerm}&page=${page}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/characters?partial_name=${searchTerm}&page=${page}`);
       const data = await response.json();
       if (data.success) {
         setCharacters(data.data.character_list);

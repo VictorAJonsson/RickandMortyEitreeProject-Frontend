@@ -20,3 +20,5 @@ yarn-error.log*
 
 src/components/Exemplo.js
 src/components/Exemplo.css
+
+.env
